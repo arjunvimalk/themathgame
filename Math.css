@@ -1,0 +1,134 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    
+    
+}
+*:focus {
+    outline: none;
+}
+body{
+    background-image: url(math\ copy.jpg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.main input{
+    width:50px;
+    text-align: center;
+    background-color: teal;
+    border-radius: 50px;
+    
+}
+#s1
+{
+    color:brown;
+    font-weight: bolder;
+}
+body h1{
+    padding-bottom: 30px;
+    animation:zoom 2s linear infinite;
+    animation-direction: alternate;
+    color: yellow;
+}
+@keyframes zoom
+{
+    from
+    {
+        transform: translateX(-20px);
+    }
+   to
+   {
+        transform: translateX(20px);
+    }
+}
+.main
+{
+width: 600px;
+height: 400px;
+background-color:yellow;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.inputbox
+{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100px;
+outline: none;
+
+
+
+}
+#oper
+{
+    background-color: blueviolet;
+}
+#start
+{
+    background-color: aquamarine;
+   font-weight: bold; 
+   text-decoration: red;
+    text-transform: uppercase;
+    padding: 10px;
+    color: darkred;
+}
+
+#b1,#b2
+{
+    text-align: center;
+    border-radius: 50px;
+    border-color: transparent;
+    padding:30px;
+    
+}
+.inputbox input{
+    font-size: 32px;
+    width: 100px;
+    
+}
+ p{
+    color: brown; 
+    font-size: medium;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.inputbox text{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.answerbox input
+{
+    margin-top: 30px;
+    width: 200px;
+    height: 80px;
+    text-align: center;
+
+}
+#s1
+{
+    color:black;
+}
+.check button{
+    text-transform: capitalize;
+    border: none;
+    background-color: thistle;
+    margin-top: 30px;
+    padding:20px;
+    font-weight: bold;
+}
+button:hover{
+    background-color: cyan;
+
+}
+#c1{
+color: blue;
+}

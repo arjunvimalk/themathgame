@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun math game!</title>
+<link rel="stylesheet" href="Math.css">
+<link rel="shortcut icon" href="math copy.jpg">
+</head>
+<body>
+<h1> Fun Math Game</h1>
+    <button onclick="ontime()"  style="position: absolute;left: 380px; top:110px;" id="start">Start</button>
+    <text id="time1" style="position: absolute;left: 660px; top:120px;font-size: 30px;color: aliceblue; "></text>
+    <div class="main">
+        <p id="c1"></p>
+        <text style="position: absolute; top:120px;left:850px;color:aliceblue;font-size: 30px;" >Score:<text id="s1" style="color: aliceblue;">0</text></text>
+        <div class="inputbox">
+            <div class="firstbox">
+                <input type="text" id="b1">
+            </div>
+            <div class="firstbox" >
+                <select id="oper" onclick="selecting()" > 
+                <option value="q"></option>
+                <option value="+">+</option>
+                <option value="*">*</option>
+            </select>
+            </div>
+        <div class="firstbox"><input type="text" id="b2"></div>
+            </div>
+            
+        <div class="answerbox">
+            <input type="text" id="v1">
+        </div>
+        <div class="check">
+            <button onclick="check2()">Check✅</button>
+        </div>
+    </div>
+</body>
+<script>
+var a1=Math.floor(Math.random()*10);
+var a2=Math.floor(Math.random()*10);
+var a3;
+var score=0;
+document.getElementById("s1").value=0;
+document.getElementById("b2").value=a2;
+document.getElementById("b1").disabled=true;
+document.getElementById("b2").disabled=true;
+document.getElementById("v1").disabled=true;
+document.getElementById("b1").value=a1;
+var op;
+function selecting(){
+    op=document.getElementById("oper").value;
+        console.log(op);
+        switch(op)
+        {
+            case '+':
+            
+                 a3=a1+a2;
+                break;
+            
+            
+            case '*':
+            
+                 a3=a1*a2;
+                break;
+
+            
+            
+            default:
+                c1.innerHTML="Select operator(+,*)";
+        }
+    }
+
+function ontime(){
+    document.getElementById("v1").disabled=false;
+    const mins=1;
+    var time=mins*60;
+    const thetimer=document.getElementById("time1");
+    setInterval(countdown,1000);
+    function countdown(){
+        const minutes=Math.floor(time/60);
+            var seconds= time % 60;
+            seconds=seconds<10?'0'+seconds:seconds;
+            thetimer.innerHTML=`${minutes}:${seconds}`;
+       
+            if (time!==0)
+            {
+                time--;
+            }
+            else
+            {
+                
+                document.getElementById("b1").disabled=true;
+                document.getElementById("b2").disabled=true;
+                document.getElementById("v1").disabled=true;
+                c1.innerHTML="Times up,Your final score is "+score;
+                
+            
+            }
+        }
+    }
+
+function check2(){
+    var check=document.getElementById("v1").value;
+    if (check==a3){
+        score=score+1;
+        s1.innerHTML=score;
+        c1.innerHTML="|✅|";
+    }
+    else{
+        score=score-1;
+        s1.innerHTML=score;
+        c1.innerHTML="|❌|";
+    }
+    //while (true){
+        var a1=Math.floor(Math.random()*12);
+        var a2=Math.floor(Math.random()*12);
+        document.getElementById("v1").value="";
+        document.getElementById("b1").value=a1;
+        document.getElementById("b2").value=a2;
+        switch(op)
+
+        {
+            case '+':
+            
+                 a3=a1+a2;
+                break;
+            
+            
+            case '*':
+            
+                 a3=a1*a2;
+            
+            default:
+                c1.innerHTML="Select operator(+,*)";
+        }
+    //}
+}
+</script>
+</html>
